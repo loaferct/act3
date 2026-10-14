@@ -1,0 +1,31 @@
+{
+  "scenarios": 50,
+  "faults_reaching_trip": 149,
+  "detected_before_trip": 149,
+  "recall": 1.0,
+  "false_alerts_per_machine_month": 0.0,
+  "median_warning_h_lineguard": 33.2,
+  "median_warning_h_fixed_alarm": 9.9,
+  "time_to_trip_estimate_vs_actual": {
+    "48h_before_trip": {
+      "median": 1.45,
+      "p10": 0.94,
+      "p90": 1.57,
+      "n": 5
+    },
+    "24h_before_trip": {
+      "median": 0.96,
+      "p10": 0.84,
+      "p90": 1.04,
+      "n": 117
+    },
+    "12h_before_trip": {
+      "median": 0.98,
+      "p10": 0.73,
+      "p90": 1.28,
+      "n": 149
+    }
+  },
+  "downtime_saved_h_per_fault": 3.1,
+  "cost_saved_per_fault_eur": 18725
+}

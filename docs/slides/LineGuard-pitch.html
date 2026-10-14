@@ -1,0 +1,288 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>LineGuard Pitch Deck</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+@page { size: 1920px 1080px; margin: 0 }
+html, body { margin: 0; background: #2a2f35 }
+section { width: 1920px; height: 1080px; position: relative; overflow: hidden; box-sizing: border-box; break-after: page; }
+section * { box-sizing: border-box }
+h1, h2, h3, p, ul, ol, table { margin: 0 }
+ul, ol { padding-left: 1.2em }
+th { text-align: left; font-weight: 600 }
+td, th { padding: 0.35em 0.6em; border-bottom: 1px solid rgba(174,183,192,0.35); vertical-align: top }
+table { border-collapse: collapse }
+@media screen { section { margin: 0 auto 24px } }
+</style></head><body>
+<section id="cover" data-transition="fade" style="background:#15191E;color:#F3F1EC;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<svg aria-label="Pulse line logo mark" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;opacity:0.18"><path d="M0 760 H980 L1080 520 L1220 980 L1340 640 L1400 760 H1920" fill="none" stroke="#E8590C" stroke-width="14" stroke-linejoin="round" stroke-linecap="round"/></svg>
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#E8590C">AMD Developer Hackathon Act III · Track 1: Intelligent Industry</p>
+<h1 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:160px;font-weight:700;line-height:1;color:#F3F1EC">LineGuard</h1>
+<p style="font-size:44px;line-height:1.25;color:#F3F1EC;width:1300px">Catch machine failures a day earlier.<br>Fix them in a planned stop.</p>
+<p style="font-size:30px;color:#AEB7C0">Predictive maintenance copilot · AI running on AMD Instinct GPUs</p>
+<p style="font-size:24px;color:#AEB7C0">[Team name] · [Team members]</p>
+
+</section>
+<section id="problem" data-transition="fade" style="background:#F3F1EC;color:#15191E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#B5470A">The problem</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.15;color:#15191E">Fixed alarms fire too late to plan a repair</h2>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FBFAF7;padding:40px;border:1px solid #DDD8CE;border-radius:16px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:96px;font-weight:700;line-height:1.05;color:#15191E">~10 h</p>
+<p style="font-size:24px;line-height:1.4;color:#4A535C">median warning a fixed alarm limit gave before the trip, across 149 developing faults</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FBFAF7;padding:40px;border:1px solid #DDD8CE;border-radius:16px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:96px;font-weight:700;line-height:1.05;color:#15191E">24 h</p>
+<p style="font-size:24px;line-height:1.4;color:#4A535C">lead time for a pump bearing kit, in our example plant's maintenance manual</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FBFAF7;padding:40px;border:1px solid #DDD8CE;border-radius:16px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:96px;font-weight:700;line-height:1.05;color:#B5470A">11 h</p>
+<p style="font-size:24px;line-height:1.4;color:#4A535C">downtime when that pump then failed unplanned, from the example work-order history</p>
+</div>
+</div>
+<p style="font-size:32px;line-height:1.4;color:#15191E">The data is already there. The warning just arrives too late to order the part and plan the stop, so the repair happens <b>during production</b>.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1100px;font-size:24px;color:#4A535C">LineGuard · AMD Developer Hackathon Act III</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#4A535C;text-align:right">2</p>
+
+</section>
+<section id="users" data-transition="fade" style="background:#F3F1EC;color:#15191E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#B5470A">Who it is for</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.15;color:#15191E">Two people decide whether a fault becomes a breakdown</h2>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FBFAF7;padding:48px;border:1px solid #DDD8CE;border-radius:16px">
+<svg viewBox="0 0 24 24" style="color:#B5470A;width:56px;height:56px;flex:none" fill="none" stroke="#B5470A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Users icon"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.8"/><path d="M16.5 14.6c2.6.2 4.4 1.9 5 4.9"/></svg>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:40px;font-weight:700;color:#15191E">Shift operator</h3>
+<ul style="font-size:30px;line-height:1.5;color:#4A535C">
+<li>What is wrong with this machine?</li>
+<li>How urgent is it?</li>
+<li>What do I check first?</li>
+</ul>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FBFAF7;padding:48px;border:1px solid #DDD8CE;border-radius:16px">
+<svg viewBox="0 0 24 24" style="color:#B5470A;width:56px;height:56px;flex:none" fill="none" stroke="#B5470A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Wrench icon"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 12.6 12.6 21a2.1 2.1 0 0 1-3-3L18 9.6"/><path d="M14.7 6.3 9.6 11.4 4 5.8 5.8 4l5.6 5.6"/></svg>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:40px;font-weight:700;color:#15191E">Maintenance planner</h3>
+<ul style="font-size:30px;line-height:1.5;color:#4A535C">
+<li>Which part do I order?</li>
+<li>How long is the job?</li>
+<li>Which planned stop can we use?</li>
+</ul>
+</div>
+</div>
+<p style="font-size:32px;line-height:1.4;color:#15191E">LineGuard answers both on one screen, in plain language, with sources.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1100px;font-size:24px;color:#4A535C">LineGuard · AMD Developer Hackathon Act III</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#4A535C;text-align:right">3</p>
+
+</section>
+<section id="warning" data-transition="fade" style="background:#F3F1EC;color:#15191E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#B5470A">1 · See it early</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.15;color:#15191E">A drift shows up a day before any alarm</h2>
+<div style="display:flex;gap:56px;align-items:start">
+<img src="img/warning.png" alt="LineGuard screen for pump P-101: sensor charts with the learned normal line, the early-warning marker, the deviation table and the diagnosis Drive-end bearing wear" style="width:860px;height:582px;object-fit:contain;background:#FFFFFF;border:1px solid #DDD8CE;border-radius:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:700;color:#15191E">Learns each machine's normal</h3>
+<p style="font-size:24px;line-height:1.4;color:#4A535C">For every sensor and every hour of the shift. The grey dotted line is the machine's own normal.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:700;color:#15191E">Alerts on persistent drift</h3>
+<p style="font-size:24px;line-height:1.4;color:#4A535C">A deviation must hold for 15 minutes, so one-off sensor glitches never raise an alert.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:700;color:#15191E">Predicts when it will trip</h3>
+<p style="font-size:24px;line-height:1.4;color:#4A535C">Matches the fault (bearing wear, 97%) and fits the accelerating trend to the trip limit: "41 h to trip". Actual: 40 h.</p>
+</div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1100px;font-size:24px;color:#4A535C">LineGuard · AMD Developer Hackathon Act III</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#4A535C;text-align:right">4</p>
+
+</section>
+<section id="plan" data-transition="fade" style="background:#15191E;color:#F3F1EC;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#E8590C">2 · Know what to do</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.15;color:#F3F1EC">The AI on AMD writes the repair plan</h2>
+<div style="display:flex;gap:56px;align-items:start">
+<img src="img/plan.png" alt="AI maintenance plan for P-101: headline, explanation, likely cause, checks, plan steps, safety, part P100-BK, priority and citations to manual sections" style="width:1040px;height:453px;object-fit:contain;background:#FFFFFF;border-radius:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;gap:20px;align-items:start">
+<svg viewBox="0 0 24 24" style="color:#E8590C;width:44px;height:44px;flex:none" fill="none" stroke="#E8590C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Book icon"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5V4.5"/><path d="M8 7h8M8 11h6"/></svg>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#F3F1EC">Cites the plant's own manuals and incident history</p>
+</div>
+<div style="display:flex;gap:20px;align-items:start">
+<svg viewBox="0 0 24 24" style="color:#E8590C;width:44px;height:44px;flex:none" fill="none" stroke="#E8590C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Tool icon"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#F3F1EC">Checks, part number, job time, safety steps and priority</p>
+</div>
+<div style="display:flex;gap:20px;align-items:start">
+<svg viewBox="0 0 24 24" style="color:#E8590C;width:44px;height:44px;flex:none" fill="none" stroke="#E8590C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Lightning icon"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#F3F1EC">Qwen3.8-Flash-Next on AMD Token Factory</p>
+</div>
+</div>
+</div>
+<p style="font-size:26px;line-height:1.4;color:#AEB7C0">Detection, time-to-trip and costs come from code. The model explains and plans; it never makes up the numbers.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1100px;font-size:24px;color:#AEB7C0">LineGuard · AMD Developer Hackathon Act III</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#AEB7C0;text-align:right">5</p>
+
+</section>
+<section id="loop" data-transition="fade" style="background:#F3F1EC;color:#15191E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#B5470A">3 · Fix it in a planned stop</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.15;color:#15191E">Approve the plan, repair in a planned stop</h2>
+<div style="display:flex;gap:56px;align-items:start">
+<img src="img/workorders.png" alt="Two work orders created from the AI plans, pending approval, each with a time-slot picker and an Approve and schedule button" style="width:620px;height:277px;object-fit:contain;background:#FFFFFF;border:1px solid #DDD8CE;border-radius:16px">
+<img src="img/results.png" alt="End-of-week results: 2 trips avoided, 11.5 hours and 62,750 euros of downtime avoided; P-101 and C-201 repaired, M-501 tripped" style="width:988px;height:385px;object-fit:contain;background:#FFFFFF;border:1px solid #DDD8CE;border-radius:16px">
+</div>
+<p style="font-size:30px;line-height:1.4;color:#15191E">Same week, two outcomes: P-101 and C-201 were <b>repaired in planned stops</b>; the press nobody acted on <b>broke down</b>. Result: <b>€62,750</b> and 11.5 h of downtime avoided.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1100px;font-size:24px;color:#4A535C">LineGuard · AMD Developer Hackathon Act III</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#4A535C;text-align:right">6</p>
+
+</section>
+<section id="how" data-transition="fade" style="background:#15191E;color:#F3F1EC;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#E8590C">How it works</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.15;color:#F3F1EC">From sensor drift to scheduled repair</h2>
+<div style="display:flex;gap:16px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#1F252C;padding:32px;border:1px solid #39424C;border-radius:16px">
+<p style="font-size:24px;font-weight:600;color:#AEB7C0">1</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:700;color:#F3F1EC">Sensors</h3>
+<p style="font-size:24px;line-height:1.4;color:#AEB7C0">Vibration, temperature, current and pressure, every minute.</p>
+</div>
+<svg viewBox="0 0 48 24" style=";width:48px;height:24px;align-self:center;flex:none" aria-label="arrow"><path d="M0 7h29V0l19 12-19 12v-7H0z" fill="#E8590C"/></svg>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#1F252C;padding:32px;border:1px solid #39424C;border-radius:16px">
+<p style="font-size:24px;font-weight:600;color:#AEB7C0">2</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:700;color:#F3F1EC">Detector</h3>
+<p style="font-size:24px;line-height:1.4;color:#AEB7C0">Flags persistent drift, names the fault, estimates time to trip. Plain, testable code.</p>
+</div>
+<svg viewBox="0 0 48 24" style=";width:48px;height:24px;align-self:center;flex:none" aria-label="arrow"><path d="M0 7h29V0l19 12-19 12v-7H0z" fill="#E8590C"/></svg>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#1F252C;padding:32px;border:2px solid #E8590C;border-radius:16px">
+<p style="font-size:24px;font-weight:600;color:#E8590C">3 · on AMD</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:700;color:#F3F1EC">AI copilot</h3>
+<p style="font-size:24px;line-height:1.4;color:#AEB7C0">Finds the right manual sections and past work orders, writes a cited plan.</p>
+</div>
+<svg viewBox="0 0 48 24" style=";width:48px;height:24px;align-self:center;flex:none" aria-label="arrow"><path d="M0 7h29V0l19 12-19 12v-7H0z" fill="#E8590C"/></svg>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#1F252C;padding:32px;border:1px solid #39424C;border-radius:16px">
+<p style="font-size:24px;font-weight:600;color:#AEB7C0">4</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:700;color:#F3F1EC">Work order</h3>
+<p style="font-size:24px;line-height:1.4;color:#AEB7C0">A planner approves a slot. The repair happens in a planned stop.</p>
+</div>
+</div>
+<p style="font-size:30px;line-height:1.4;color:#F3F1EC">Numbers come from code. The language model only <span style="color:#E8590C">explains and plans</span>.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1100px;font-size:24px;color:#AEB7C0">LineGuard · AMD Developer Hackathon Act III</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#AEB7C0;text-align:right">7</p>
+
+</section>
+<section id="amd" data-transition="fade" style="background:#15191E;color:#F3F1EC;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#E8590C">Runs on AMD</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.15;color:#F3F1EC">The copilot's model runs on AMD Instinct GPUs</h2>
+<div style="display:flex;gap:48px;align-items:start">
+<table style="width:1040px;font-size:26px;color:#F3F1EC">
+<tr><th style="width:30%;color:#AEB7C0">What</th><th style="width:70%;color:#AEB7C0">Measured in this project</th></tr>
+<tr><td>Endpoint</td><td>AMD Token Factory, OpenAI-compatible API</td></tr>
+<tr><td>Model</td><td>Qwen3.8-Flash-Next, open weights</td></tr>
+<tr><td>Plan generation</td><td>18–30 s per alert, about 20–25 tokens/s</td></tr>
+<tr><td>Benchmark</td><td>9 of 9 plans were valid and cited (Qwen3.8 and DeepSeek-V4)</td></tr>
+<tr><td>In the demo</td><td>Instant: the plan starts in the background when an alert opens</td></tr>
+</table>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#1F252C;padding:40px;border:2px solid #E8590C;border-radius:16px">
+<svg viewBox="0 0 24 24" style="color:#E8590C;width:48px;height:48px;flex:none" fill="none" stroke="#E8590C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Lock icon"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:700;color:#F3F1EC">Same code, plant's own GPU</h3>
+<p style="font-size:24px;line-height:1.4;color:#AEB7C0">Point it at a vLLM server on an AMD Instinct MI300X, and sensor data and manuals can stay inside the plant.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1100px;font-size:24px;color:#AEB7C0">LineGuard · AMD Developer Hackathon Act III</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#AEB7C0;text-align:right">8</p>
+
+</section>
+<section id="results" data-transition="fade" style="background:#F3F1EC;color:#15191E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#B5470A">Results</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.15;color:#15191E">Measured on 50 unseen fault scenarios</h2>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FBFAF7;padding:40px;border:1px solid #DDD8CE;border-radius:16px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:80px;font-weight:700;line-height:1.05;color:#B5470A">33 h</p>
+<p style="font-size:24px;line-height:1.4;color:#4A535C">median warning before the trip (fixed alarms: 10 h)</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FBFAF7;padding:40px;border:1px solid #DDD8CE;border-radius:16px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:80px;font-weight:700;line-height:1.05;color:#15191E">100%</p>
+<p style="font-size:24px;line-height:1.4;color:#4A535C">of 149 developing faults warned before the trip</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FBFAF7;padding:40px;border:1px solid #DDD8CE;border-radius:16px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:80px;font-weight:700;line-height:1.05;color:#15191E">0</p>
+<p style="font-size:24px;line-height:1.4;color:#4A535C">false alerts on healthy machines</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FBFAF7;padding:40px;border:1px solid #DDD8CE;border-radius:16px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:80px;font-weight:700;line-height:1.05;color:#15191E">€18.7k</p>
+<p style="font-size:24px;line-height:1.4;color:#4A535C">downtime cost avoided per fault, and 3.1 h less downtime</p>
+</div>
+</div>
+<p style="font-size:30px;line-height:1.4;color:#15191E">Time-to-trip prediction one day ahead: <b>within about ±15%</b> of the real trip time (median 0.96×).</p>
+<p style="font-size:24px;line-height:1.4;color:#4A535C">Plant data is simulated: physically motivated fault patterns, shift cycles, noise and sensor glitches, with exact ground truth. Real data is noisier, so expect some false alerts and tuning. Costs use the editable assumptions in lineguard/impact.py. Reproduce with: python -m scripts.evaluate --runs 50</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1100px;font-size:24px;color:#4A535C">LineGuard · AMD Developer Hackathon Act III</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#4A535C;text-align:right">9</p>
+
+</section>
+<section id="trust" data-transition="fade" style="background:#15191E;color:#F3F1EC;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#E8590C">Trust and safety</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.15;color:#F3F1EC">Built so operators can trust it</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="display:flex;gap:24px;align-items:start;background:#1F252C;padding:32px;border:1px solid #39424C;border-radius:16px">
+<svg viewBox="0 0 24 24" style="color:#E8590C;width:44px;height:44px;flex:none" fill="none" stroke="#E8590C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="CheckCircle icon"><circle cx="12" cy="12" r="9.5"/><path d="m7.5 12.5 3 3 6-6.5"/></svg>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#F3F1EC">Every claim cites a source. Citations the model can't back up are struck out.</p>
+</div>
+<div style="display:flex;gap:24px;align-items:start;background:#1F252C;padding:32px;border:1px solid #39424C;border-radius:16px">
+<svg viewBox="0 0 24 24" style="color:#E8590C;width:44px;height:44px;flex:none" fill="none" stroke="#E8590C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Lock icon"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#F3F1EC">Lockout/tagout is added to every hands-on plan, always.</p>
+</div>
+<div style="display:flex;gap:24px;align-items:start;background:#1F252C;padding:32px;border:1px solid #39424C;border-radius:16px">
+<svg viewBox="0 0 24 24" style="color:#E8590C;width:44px;height:44px;flex:none" fill="none" stroke="#E8590C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Chart icon"><path d="M3 21h18"/><rect x="5" y="11" width="3" height="7"/><rect x="10.5" y="6" width="3" height="12"/><rect x="16" y="13" width="3" height="5"/></svg>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#F3F1EC">Detection, time-to-trip and costs are computed by code, not by the model.</p>
+</div>
+<div style="display:flex;gap:24px;align-items:start;background:#1F252C;padding:32px;border:1px solid #39424C;border-radius:16px">
+<svg viewBox="0 0 24 24" style="color:#E8590C;width:44px;height:44px;flex:none" fill="none" stroke="#E8590C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Users icon"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.8"/><path d="M16.5 14.6c2.6.2 4.4 1.9 5 4.9"/></svg>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#F3F1EC">A person approves every work order and picks the slot.</p>
+</div>
+<div style="display:flex;gap:24px;align-items:start;background:#1F252C;padding:32px;border:1px solid #39424C;border-radius:16px">
+<svg viewBox="0 0 24 24" style="color:#E8590C;width:44px;height:44px;flex:none" fill="none" stroke="#E8590C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Warning icon"><path d="M12 3 2 20h20z"/><path d="M12 10v4.5M12 17.5v.5"/></svg>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#F3F1EC">If the AI is unreachable, a clearly labelled fallback keeps the screen working.</p>
+</div>
+<div style="display:flex;gap:24px;align-items:start;background:#1F252C;padding:32px;border:1px solid #39424C;border-radius:16px">
+<svg viewBox="0 0 24 24" style="color:#E8590C;width:44px;height:44px;flex:none" fill="none" stroke="#E8590C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Code icon"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#F3F1EC">Tests cover detection, causality, diagnosis, the AI path and the work-order loop.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1100px;font-size:24px;color:#AEB7C0">LineGuard · AMD Developer Hackathon Act III</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#AEB7C0;text-align:right">10</p>
+
+</section>
+<section id="business" data-transition="fade" style="background:#F3F1EC;color:#15191E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#B5470A">Business value</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.15;color:#15191E">Value today, and the path to a real plant</h2>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FBFAF7;padding:48px;border:1px solid #DDD8CE;border-radius:16px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:700;color:#15191E">Why a plant pays</h3>
+<ul style="font-size:26px;line-height:1.5;color:#4A535C">
+<li>About €18.7k avoided per caught fault (example cost model)</li>
+<li>Uses the sensors plants already have</li>
+<li>Pricing: [€__ per monitored machine per month]</li>
+<li>Payback: one caught fault a year covers [__] machines</li>
+</ul>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FBFAF7;padding:48px;border:1px solid #DDD8CE;border-radius:16px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:700;color:#15191E">Next steps</h3>
+<ol style="font-size:26px;line-height:1.5;color:#4A535C">
+<li>Connect to the plant historian or OPC UA</li>
+<li>Pilot on one real line with its failure history</li>
+<li>Self-host the model on an AMD Instinct MI300X</li>
+<li>Learn new failure modes from the plant's own work orders</li>
+</ol>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1100px;font-size:24px;color:#4A535C">LineGuard · AMD Developer Hackathon Act III</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;color:#4A535C;text-align:right">11</p>
+
+</section>
+<section id="close" data-transition="fade" style="background:#E8590C;color:#15191E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#15191E">LineGuard</p>
+<h1 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:96px;font-weight:700;line-height:1.1;color:#15191E;width:1500px">Catch it a day earlier. Fix it in a planned stop.</h1>
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:30px;color:#15191E">Code: [github.com/your-team/lineguard]</p>
+<p style="font-size:30px;color:#15191E">Live demo: [your demo URL]</p>
+<p style="font-size:30px;color:#15191E">[Team name] · AMD Developer Hackathon Act III · Track 1</p>
+</div>
+
+</section>
+
+</body></html>
