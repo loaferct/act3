@@ -4,7 +4,7 @@ Read these as the narration for the demo video.
 
 ## 1. cover
 
-Plants already collect sensor data, but they still break down, because their alarms fire too late to plan a repair. This is LineGuard: it catches machines drifting toward failure about a day earlier than fixed alarms, and an AI copilot running on AMD Instinct GPUs turns each alert into a repair plan that can be done in a planned stop.
+Plants already collect sensor data, but they still break down, because their alarms fire too late to plan a repair. This is LineGuard: it catches machines drifting toward failure about a day earlier than fixed alarms, and an AI copilot running on AMD GPUs turns each alert into a repair plan that can be done in a planned stop.
 
 ## 2. problem
 
@@ -20,7 +20,7 @@ LineGuard learns what normal looks like for each machine, for every sensor and e
 
 ## 5. plan
 
-One click asks the copilot for a plan. It runs an open model, Qwen3.8-Flash-Next, on AMD Instinct GPUs through AMD Token Factory. It reads the alert evidence plus the plant's own manuals, safety procedure and past work orders, and writes a plan an operator can follow: what is happening, what to check, which part, how long, and lockout first. Every line cites its source. The numbers come from LineGuard's code, not from the model.
+One click asks the copilot for a plan. It runs an open model, Qwen3.8-Flash-Next, on AMD GPUs through AMD Token Factory. It reads the alert evidence plus the plant's own manuals, safety procedure and past work orders, and writes a plan an operator can follow: what is happening, what to check, which part, how long, and lockout first. Every line cites its source. The numbers come from LineGuard's code, not from the model.
 
 ## 6. loop
 
@@ -32,7 +32,7 @@ Four steps. Sensor data comes in every minute. The detector compares each sensor
 
 ## 8. amd
 
-The language model runs on AMD Instinct GPUs through AMD Token Factory. We use Qwen3.8-Flash-Next, an open-weights model. A full plan takes 18 to 30 seconds at about 20 to 25 tokens per second, and in our benchmark 9 out of 9 plans were valid and cited. In the demo it feels instant, because the analysis starts in the background as soon as an alert opens. The same code also runs against a vLLM server on an AMD MI300X, so a plant can keep its data on site.
+The language model runs on AMD GPUs through AMD Token Factory, the hackathon's AI API. We use Qwen3.8-Flash-Next, an open-weights model. A full plan takes 18 to 30 seconds at about 20 to 25 tokens per second, and in our benchmark 9 out of 9 plans were valid and cited. In the demo it feels instant, because the analysis starts in the background as soon as an alert opens. The same code also runs against a vLLM server on an AMD MI300X, so a plant can keep its data on site.
 
 ## 9. results
 
@@ -44,8 +44,8 @@ In a factory, trust matters more than cleverness. Every statement the copilot ma
 
 ## 11. business
 
-A plant pays because each caught fault avoids roughly 18,700 euros under our example cost model, and LineGuard uses sensors the plant already has. [Say your pricing and payback here.] Next steps: connect to a real plant historian or OPC UA, pilot on one line with real failure history, self-host the model on an AMD MI300X so data stays on site, and learn new failure modes from the plant's own work orders.
+A plant pays because each caught fault avoids roughly 18,700 euros under our example cost model, and LineGuard uses sensors the plant already has. We propose 150 euros per monitored machine per month, 1,800 euros a year, so a single caught fault a year pays for about ten machines. Next steps: connect to a real plant historian or OPC UA, pilot on one line with real failure history, self-host the model on an AMD MI300X so data stays on site, and learn new failure modes from the plant's own work orders.
 
 ## 12. close
 
-LineGuard: catch it a day earlier, fix it in a planned stop. The code and a live demo are linked here. Thank you.
+LineGuard: catch it a day earlier, fix it in a planned stop. The code and the demo video are linked here. Thank you.
